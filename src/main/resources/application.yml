@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    contextPath: /transacoes-api
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:transacaoApi
+    driverClassName: org.h2.Driver
+    username: admin
+    password: adminBD@321
+    database-plataform: org.hibernate.dialect.H2Dialect
