@@ -1,5 +1,7 @@
 package br.com.transacoesapi.entity.enux;
 
+import java.util.Arrays;
+import java.util.List;
 import lombok.Getter;
 
 public @Getter
@@ -29,5 +31,26 @@ enum OperationType {
       }
     }
     throw new RuntimeException(String.format("Tipo de operação (%s) não suportado", id));
+  }
+
+  @Override
+  public String toString() {
+    return this.getDescription();
+  }
+
+  public List<OperationType> getOperationTypesEntry(){
+    return Arrays.asList(PAGAMENTO);
+  }
+
+  public List<OperationType> getOperationTypesOutput(){
+    return Arrays.asList(COMPRA_PARCELADA, COMPRA_A_VISTA, SAQUE);
+  }
+
+  public boolean isValueEntry() {
+    return getOperationTypesEntry().contains(this);
+  }
+
+  public boolean isOutputValue() {
+    return getOperationTypesOutput().contains(this);
   }
 }
