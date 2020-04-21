@@ -1,18 +1,18 @@
-package br.com.transacoesapi.service.validator.Account;
+package br.com.transacoesapi.service.validator.account;
 
-import br.com.transacoesapi.entity.dto.account.CreateAccountDTO;
+import br.com.transacoesapi.dto.account.CreateAccountDTO;
 import br.com.transacoesapi.repository.AccountRepository;
 import br.com.transacoesapi.service.validator.PreEntityValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NoExistAccountWithDocumentValidate implements PreEntityValidator<CreateAccountDTO> {
+public class NoExistsAccountWithDocumentValidator implements PreEntityValidator<CreateAccountDTO> {
 
   private AccountRepository repository;
 
   @Autowired
-  public NoExistAccountWithDocumentValidate(AccountRepository repository) {
+  public NoExistsAccountWithDocumentValidator(AccountRepository repository) {
     this.repository = repository;
   }
 

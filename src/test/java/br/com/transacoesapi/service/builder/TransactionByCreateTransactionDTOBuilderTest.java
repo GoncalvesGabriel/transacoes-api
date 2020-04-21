@@ -5,7 +5,7 @@ import static org.mockito.Mockito.when;
 
 import br.com.transacoesapi.entity.Account;
 import br.com.transacoesapi.entity.Transaction;
-import br.com.transacoesapi.entity.dto.transaction.CreateTransactionDTO;
+import br.com.transacoesapi.dto.transaction.CreateTransactionDTO;
 import br.com.transacoesapi.entity.enux.OperationType;
 import br.com.transacoesapi.service.AccountService;
 import org.hamcrest.MatcherAssert;
@@ -18,7 +18,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class BuilderTransactionByCreateTransactionDTOTest {
+public class TransactionByCreateTransactionDTOBuilderTest {
 
   @Mock
   private AccountService accountService;
@@ -27,7 +27,7 @@ public class BuilderTransactionByCreateTransactionDTOTest {
   private CreateTransactionDTO createTransactionDTO;
 
   @InjectMocks
-  private BuilderTransactionByCreateTransactionDTO builder;
+  private TransactionByCreateTransactionDTOBuilder builder;
 
   private double valor = 102.34;
 

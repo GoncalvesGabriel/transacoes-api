@@ -1,7 +1,7 @@
 package br.com.transacoesapi.controller;
 
-import br.com.transacoesapi.entity.dto.account.AccountDTO;
-import br.com.transacoesapi.entity.dto.account.CreateAccountDTO;
+import br.com.transacoesapi.dto.account.AccountDTO;
+import br.com.transacoesapi.dto.account.CreateAccountDTO;
 import br.com.transacoesapi.service.AccountService;
 import java.net.URI;
 import java.util.Optional;
@@ -31,7 +31,7 @@ public class AccountController {
 
   @GetMapping("/{id}")
   public ResponseEntity<AccountDTO> getById(@PathVariable Long id) {
-    Optional<AccountDTO> account = service.findBy(id);
+    Optional<AccountDTO> account = service.findDTOById(id);
     return ResponseEntity.of(account);
   }
 }

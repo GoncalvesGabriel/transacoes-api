@@ -1,8 +1,7 @@
 package br.com.transacoesapi.controller;
 
-import br.com.transacoesapi.entity.dto.account.AccountDTO;
-import br.com.transacoesapi.entity.dto.transaction.CreateTransactionDTO;
-import br.com.transacoesapi.entity.dto.transaction.TransactionDTO;
+import br.com.transacoesapi.dto.transaction.CreateTransactionDTO;
+import br.com.transacoesapi.dto.transaction.TransactionDTO;
 import br.com.transacoesapi.service.TransactionService;
 import java.net.URI;
 import java.util.Optional;
@@ -32,7 +31,7 @@ public class TransactionController {
 
   @GetMapping("/{id}")
   public ResponseEntity<TransactionDTO> getById(@PathVariable Long id) {
-    Optional<TransactionDTO> transaction = service.findBy(id);
+    Optional<TransactionDTO> transaction = service.findDTOById(id);
     return ResponseEntity.of(transaction);
   }
 

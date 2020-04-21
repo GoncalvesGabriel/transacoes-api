@@ -1,10 +1,13 @@
-package br.com.transacoesapi.entity.dto.transaction;
+package br.com.transacoesapi.dto.transaction;
 
 import br.com.transacoesapi.entity.Transaction;
+import br.com.transacoesapi.dto.util.JsonEnumSerializer;
 import br.com.transacoesapi.entity.enux.OperationType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.LocalDateTime;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +22,7 @@ class TransactionDTO {
   private Long accountId;
 
   @JsonProperty("operation_type")
+  @JsonSerialize(using = JsonEnumSerializer.class)
   private OperationType operationType;
 
   private double amount;
@@ -28,10 +32,15 @@ class TransactionDTO {
   private LocalDateTime eventDate;
 
   public TransactionDTO(Transaction transaction) {
-    this.id = transaction.getId();
-    this.accountId = transaction.getNumberAccount();
-    this.operationType = transaction.getOperationType();
-    this.amount = transaction.getAmount();
-    this.eventDate = transaction.getEventDate();
+    this(transaction.getId(), transaction.getNumberAccount(), transaction.getOperationType(), transaction.getAmount(), transaction.getEventDate());
+  }
+
+  @Builder
+  public TransactionDTO(Long id, Long accountId, OperationType operationType, double amount, LocalDateTime eventDate) {
+    this.id = id;
+    this.accountId = accountId;
+    this.operationType = operationType;
+    this.amount = amount;
+    this.eventDate = eventDate;
   }
 }

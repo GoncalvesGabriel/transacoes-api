@@ -18,7 +18,7 @@ public class OperationTypeTest {
     String message = "OperationType (%s) deve ser registrado como de entrada ou como de saída";
     Arrays.stream(OperationType.values()).forEach(value ->
         MatcherAssert.assertThat(String.format(message, value.getDescription()),
-            (value.isValueEntry() || value.isOutputValue()), Matchers.is(true)));
+            (value.isIncome() || value.isOutcome()), Matchers.is(true)));
   }
 
   @Test

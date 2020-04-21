@@ -14,14 +14,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters.LocalDateTimeConverter;
 
 @Entity
 @Table(name =  "Transaction")
-@AllArgsConstructor
 @NoArgsConstructor
 public @Data
 class Transaction implements DomainEntity {
@@ -53,5 +52,14 @@ class Transaction implements DomainEntity {
   @Transient
   public Long getNumberAccount(){
      return this.getAccount().getId();
+  }
+
+  @Builder
+  public Transaction(Long id, Account account, OperationType operationType, double amount, LocalDateTime eventDate) {
+    this.id = id;
+    this.account = account;
+    this.operationType = operationType;
+    this.amount = amount;
+    this.eventDate = eventDate;
   }
 }

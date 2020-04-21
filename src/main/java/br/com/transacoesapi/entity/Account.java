@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "Account")
 @NoArgsConstructor
 public @Data
-class Account {
+class Account implements DomainEntity{
 
   @Id
   @Column(name = "Account_ID")

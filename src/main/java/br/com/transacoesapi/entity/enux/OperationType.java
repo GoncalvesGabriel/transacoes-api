@@ -38,19 +38,19 @@ enum OperationType {
     return this.getDescription();
   }
 
-  public List<OperationType> getOperationTypesEntry(){
+  public List<OperationType> getOperationTypesIncome(){
     return Arrays.asList(PAGAMENTO);
   }
 
-  public List<OperationType> getOperationTypesOutput(){
+  public List<OperationType> getOperationTypesOutcome(){
     return Arrays.asList(COMPRA_PARCELADA, COMPRA_A_VISTA, SAQUE);
   }
 
-  public boolean isValueEntry() {
-    return getOperationTypesEntry().contains(this);
+  public boolean isIncome() {
+    return getOperationTypesIncome().contains(this);
   }
 
-  public boolean isOutputValue() {
-    return getOperationTypesOutput().contains(this);
+  public boolean isOutcome() {
+    return getOperationTypesOutcome().contains(this);
   }
 }

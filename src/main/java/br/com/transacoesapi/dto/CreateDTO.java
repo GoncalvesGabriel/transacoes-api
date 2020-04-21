@@ -1,4 +1,4 @@
-package br.com.transacoesapi.entity.dto;
+package br.com.transacoesapi.dto;
 
 import br.com.transacoesapi.entity.DomainEntity;
 

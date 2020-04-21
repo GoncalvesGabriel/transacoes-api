@@ -1,11 +1,11 @@
-package br.com.transacoesapi.service.validator.Account;
+package br.com.transacoesapi.service.validator.account;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import br.com.transacoesapi.entity.dto.account.CreateAccountDTO;
+import br.com.transacoesapi.dto.account.CreateAccountDTO;
 import br.com.transacoesapi.repository.AccountRepository;
 import org.junit.Before;
 import org.junit.Rule;
@@ -17,7 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class NoExistAccountWithDocumentValidateTest {
+public class NoExistsAccountWithDocumentValidatorTest {
 
   @Mock
   private AccountRepository repository;
@@ -26,7 +26,7 @@ public class NoExistAccountWithDocumentValidateTest {
   private CreateAccountDTO accountDTO;
 
   @InjectMocks
-  private NoExistAccountWithDocumentValidate validator;
+  private NoExistsAccountWithDocumentValidator validator;
 
   @Rule
   public ExpectedException rule = ExpectedException.none();

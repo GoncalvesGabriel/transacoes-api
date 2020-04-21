@@ -1,8 +1,8 @@
 package br.com.transacoesapi.service;
 
 import br.com.transacoesapi.entity.Account;
-import br.com.transacoesapi.entity.dto.account.AccountDTO;
-import br.com.transacoesapi.entity.dto.account.CreateAccountDTO;
+import br.com.transacoesapi.dto.account.AccountDTO;
+import br.com.transacoesapi.dto.account.CreateAccountDTO;
 import br.com.transacoesapi.repository.AccountRepository;
 import br.com.transacoesapi.service.validator.PreEntityValidator;
 import java.util.List;
@@ -32,7 +32,7 @@ public class AccountService {
     return new AccountDTO(account);
   }
 
-  public Optional<AccountDTO> findBy(Long id) {
+  public Optional<AccountDTO> findDTOById(Long id) {
     Optional<Account> account = repository.findById(id);
     if (account.isPresent()) {
       return Optional.of(new AccountDTO(account.get()));
