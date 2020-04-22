@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("br.com.transacoesapi")
-public class JPAConfig {
+public class ConfigJPA {
 
 }
 

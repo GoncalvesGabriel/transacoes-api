@@ -6,6 +6,7 @@ import br.com.transacoesapi.entity.enux.OperationType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Data;
@@ -27,6 +28,7 @@ class TransactionDTO {
 
   private double amount;
 
+  @ApiModelProperty(example = "2020-04-22 00:42:08")
   @JsonProperty("event_date")
   @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
   private LocalDateTime eventDate;
