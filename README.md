@@ -22,9 +22,9 @@ Após executar o comando mvn clean install na raíz do projeto para gerar o arqu
 java -jar .\transacoes-api-0.0.1-SNAPSHOT.jar br.com.transacoesapi.TransacoesApiApplication
 
 #### Execução via Docker
-Após executar o comando mvn clean install na raíz do projeto para gerar o arquivo to tipo jar. Acessar a pasta docker, e executar abaixo para gerar a imagem: 
-docker build -t {NOME DA IMAGEM}:{VERSÃO} .
-Com a imagem já gerada, executar o comando para rodar a imagem: docker run -p 8080:8080 {NOME DA IMAGEM}:{VERSÃO}
+<p>Após executar o comando mvn clean install na raíz do projeto para gerar o arquivo to tipo jar. Acessar a pasta docker, e executar abaixo para gerar a imagem:<p/> 
+<p>docker build -t {NOME DA IMAGEM}:{VERSÃO} .</p>
+<p>Com a imagem já gerada, executar o comando para rodar a imagem: docker run -p 8080:8080 {NOME DA IMAGEM}:{VERSÃO}</p>
 
 ### Links
 <p>A Aplicação fica disponível em: http://localhost:8080/transacoes-api</p>
