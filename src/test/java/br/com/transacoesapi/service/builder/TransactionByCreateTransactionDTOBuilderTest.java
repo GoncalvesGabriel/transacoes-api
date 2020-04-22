@@ -43,7 +43,7 @@ public class TransactionByCreateTransactionDTOBuilderTest {
   }
 
   @Test
-  public void builderEntryTransaction() {
+  public void builderIncomeTransaction() {
     when(createTransactionDTO.getOperationTypeEnum()).thenReturn(OperationType.PAGAMENTO);
 
     Transaction transaction = this.builder.builder(createTransactionDTO);
@@ -55,7 +55,7 @@ public class TransactionByCreateTransactionDTOBuilderTest {
   }
 
   @Test
-  public void builderOutputTransaction() {
+  public void builderOutcomeTransaction() {
     when(createTransactionDTO.getOperationTypeEnum()).thenReturn(OperationType.SAQUE);
 
     Transaction transaction = this.builder.builder(createTransactionDTO);

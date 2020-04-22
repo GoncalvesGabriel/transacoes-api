@@ -30,7 +30,7 @@ enum OperationType {
         return value;
       }
     }
-    throw new RuntimeException(String.format("Tipo de operação (%s) não suportado", id));
+    throw new IllegalArgumentException(String.format("Tipo de operação (%s) não suportado", id));
   }
 
   @Override

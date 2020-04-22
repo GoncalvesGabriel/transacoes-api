@@ -25,7 +25,7 @@ public class TransactionByCreateTransactionDTOBuilder implements EntityBuilder<T
     OperationType operationTypeEnum = dto.getOperationTypeEnum();
     double amount = dto.getAmount();
     if(operationTypeEnum.isOutcome()) {
-      amount = amount * -1;
+      amount = -amount;
     }
     return new Transaction(account, operationTypeEnum, amount, LocalDateTime.now());
   }
